@@ -1,0 +1,64 @@
+/*---------------------------------------------------------------------------------------------------------*/
+/*                                                                                                         */
+/* SPDX-License-Identifier: Apache-2.0                                                                     */
+/* Copyright(c) 2024 Nuvoton Technology Corp. All rights reserved.                                         */
+/*                                                                                                         */
+/*---------------------------------------------------------------------------------------------------------*/
+
+
+#define ADC_SINGLE      1
+#define ADC_CONTINUOUS  2
+#define VBG             8
+#define VTEMP           9
+#define VLDO           10
+
+#define ADC_HWT_PWM0CH0    0
+#define ADC_HWT_PWM0CH2    1
+#define ADC_HWT_PWM0CH4    2
+#define ADC_HWT_STADC    3
+
+#define ADC_HWT_FALLINGEDGE    0
+#define ADC_HWT_RISINGEDGE     1
+#define ADC_HWT_CENTRAL        2
+#define ADC_HWT_END            3
+
+#define ADC_INT_HALFDONE       0
+#define ADC_INT_CONTDONE       1
+#define ADC_INT_SINGLE         3
+
+#define ADC_CH0                 0
+#define ADC_CH1                 1
+#define ADC_CH2                 2
+#define ADC_CH3                 3
+#define ADC_CH4                 4
+#define ADC_CH5                 5
+#define ADC_CH6                 6
+#define ADC_CH7                 7
+#define ADC_BANDGAP             8
+#define ADC_CH9                 9
+#define ADC_CH10                10
+#define ADC_CH11                11
+#define ADC_CH12                12
+#define ADC_CH13                13
+#define ADC_CH14                14
+#define ADC_CH15                15
+
+#define ADC_ADCDIV1                 0
+#define ADC_ADCDIV2                 1
+#define ADC_ADCDIV4                 2
+#define ADC_ADCDIV8                 3
+
+#define ADC_ADCAQT0                 0
+#define ADC_ADCAQT1                 1
+#define ADC_ADCAQT2                 2
+#define ADC_ADCAQT3                 3
+#define ADC_ADCAQT4                 4
+#define ADC_ADCAQT5                 5
+#define ADC_ADCAQT6                 6
+#define ADC_ADCAQT7                 7
+
+
+void ADC_InitialContinous(uint16_t u16ADCRBase, uint8_t u8ADCRLength);
+void ADC_ConvertTime(uint8_t u8AINCHNSEL, uint8_t u8ADCDIV, uint8_t u8ADCAQT);
+extern uint16_t READ_BANDGAP(void);
+void ADC_ComapreMode(uint8_t u8ADCCMPEN, uint16_t u16ADCCMPVALUE);

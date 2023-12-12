@@ -1,0 +1,50 @@
+2020/11/23
+*\MS51DA9AE_MS51BA9AE
+1. Pin interrupt function  function_define_ms51_16k.h     Added Pin interrupt both edge define
+   \Regbased\Pin_Interrupt -> GPIO_Pin_Interrupt added both edge sample.
+
+*\MS51FB9AE_MS51XB9AE_MS51XB9BE
+1. Pin interrupt function  function_define_ms51_16k.h     Added Pin interrupt both edge define
+   \Regbased\Pin_Interrupt -> GPIO_Pin_Interrupt added both edge sample.
+
+*\MS51FC0AE_MS51XC0BE_MS51EB0AE_MS51EC0AE_MS51TC0AE_MS51PC0AE
+1. \library\include\ function_define_ms51_32k.h     Added Pin interrupt both edge define
+   \Regbased\Pin_Interrupt -> GPIO_Pin_Interrupt    Added both edge sample.
+2. adc.c                                            Modified ADCDIV from ADCSR to ADCCON1
+
+2021/5
+1  DID                           modify iap.c  read DID -> read DID + read PID
+2. I2C interrupt                 Add project I2C master/slave with interrupt and slave as eeprom mode.
+
+2021/11
+1. sys.c                         Optimizer HIRC adjust 16.6MHz method.
+2. function_defien.h             Added DISABLE_PIT function.
+                                 Modified DISABLE_IC0 ~ IC2 to DISABLE_CAP0 ~ CAP2
+2022/01
+1. All                           function_define.h  added signed char/int/long type define
+2. All                           Project LX51 + REMOVEUNUSED para. for code size optimize.
+
+2022/07
+1. All                           Added Apache License in all lib .c file
+2. ADC                           Remove all adc slow speed code define.
+
+2022/09
+1. PWM                           Added PWM reload API
+2. GPIO                          Added GPIO TTL/Schimtt Trig in function define.
+
+2022/10
+1. WKT                           Added WKT ms/s level lib
+2. GPIO PIT                      PIT project optimize add printf
+
+2022/11
+1. common.c                      Added software reset API
+
+2022/12
+1. I2C                           fix SI check flag in I2C EEPROM project.
+
+2023/08
+1. ALL                           Added PowerManagerment folder for all power consumption test project.
+                                 All checked by py tool.
+
+2023/09
+1. MS51_32K                      Added UART2 ~ UART4  printf project.
