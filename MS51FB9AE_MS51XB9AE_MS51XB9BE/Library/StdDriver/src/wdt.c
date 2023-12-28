@@ -13,11 +13,21 @@
  * @details     none
  * @note        none
  */
+#if defined __C51__
 void WDT_ISR (void)   interrupt 10
+#elif defined __ICC8051__
+#pragma vector=0x53
+__interrupt void WDT_ISR(void)
+#elif defined __SDCC__
+void WDT_ISR (void)   __interrupt (10)
+#endif
 {
-  _push_(SFRS);
+    SFRS_TMP = SFRS;              /* for SFRS page */
     clr_WDCON_WDTF;
-  _pop_(SFRS);
+    if (SFRS_TMP)                 /* for SFRS page */
+    {
+      ENABLE_SFR_PAGE1;
+    }
 }
 #endif
 

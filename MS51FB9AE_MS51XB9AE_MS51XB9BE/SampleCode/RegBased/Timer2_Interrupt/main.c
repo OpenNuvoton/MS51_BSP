@@ -17,10 +17,10 @@ void Timer2_ISR(void)  __interrupt (5)
 #endif
 {
     SFRS_TMP = SFRS;              /* for SFRS page */
-	
     clr_T2CON_TF2;
+
     GPIO_LED ^= 1;
-	
+
     if (SFRS_TMP)                 /* for SFRS page */
     {
       ENABLE_SFR_PAGE1;
@@ -33,7 +33,7 @@ void main (void)
 {
     GPIO_LED_QUASI_MODE;
 
-    Timer2_AutoReload_Interrupt_Initial(24,640000);
+    Timer2_AutoReload_Interrupt_Initial(24,20000);
     ENABLE_GLOBAL_INTERRUPT;
 
     while(1);

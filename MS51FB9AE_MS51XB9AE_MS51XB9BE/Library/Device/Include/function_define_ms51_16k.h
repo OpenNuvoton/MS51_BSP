@@ -533,7 +533,7 @@ typedef __bit                 BIT;
 /*****************************************************************************/
 /*    TIMER Function Define                                                  */ 
 /*****************************************************************************/
-#define    ENABLE_CLOCK_OUT             set_CKCON_CLOEN;
+#define    ENABLE_CLOCK_OUT              set_CKCON_CLOEN;
 /*    Timer0 basic define  */
 #define    ENABLE_TIMER0_MODE0           TMOD&=0xF0
 #define    ENABLE_TIMER0_MODE1           TMOD&=0xF0;TMOD|=0x01
@@ -556,6 +556,14 @@ typedef __bit                 BIT;
 #define    TIMER1_MODE1_ENABLE           TMOD&=0x0F;TMOD|=0x10
 #define    TIMER1_MODE2_ENABLE           TMOD&=0x0F;TMOD|=0x20
 #define    TIMER1_MODE3_ENABLE           TMOD&=0x0F;TMOD|=0x30
+/*    Timer3 basic define  */
+#define    TIMER3_DIV_2                  T3CON&=0xF1;T3CON|=0x01
+#define    TIMER3_DIV_4                  T3CON&=0xF1;T3CON|=0x02
+#define    TIMER3_DIV_8                  T3CON&=0xF1;T3CON|=0x03
+#define    TIMER3_DIV_16                 T3CON&=0xF1;T3CON|=0x04
+#define    TIMER3_DIV_32                 T3CON&=0xF1;T3CON|=0x05
+#define    TIMER3_DIV_64                 T3CON&=0xF1;T3CON|=0x06
+#define    TIMER3_DIV_128                T3CON&=0xF1;T3CON|=0x07
 /*    Timer2 function define  */
 #define    TIMER2_DIV_4                  T2MOD|=0x10;T2MOD&=0x9F
 #define    TIMER2_DIV_16                 T2MOD|=0x20;T2MOD&=0xAF
@@ -572,7 +580,6 @@ typedef __bit                 BIT;
 #define    DISABLE_TIMER2_CAP0           CAPCON0&=0xBF
 #define    DISABLE_TIMER2_CAP1           CAPCON0&=0xDF
 #define    DISABLE_TIMER2_CAP2           CAPCON0&=0xEF
-
 /*    Timer2 Capture define  */
 #define    IC0_P12_CAP0_FALLINGEDGE_CAPTURE    CAPCON1&=0xFC;CAPCON3&=0xF0;CAPCON0|=0x10;CAPCON2|=0x10
 #define    IC1_P11_CAP0_FALLINGEDGE_CAPTURE    CAPCON1&=0xFC;CAPCON3&=0xF0;CAPCON3|=0x01;CAPCON0|=0x10;CAPCON2|=0x10

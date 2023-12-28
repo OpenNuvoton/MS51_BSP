@@ -556,14 +556,22 @@ typedef __bit                 BIT;
 #define    TIMER1_MODE1_ENABLE           TMOD&=0x0F;TMOD|=0x10
 #define    TIMER1_MODE2_ENABLE           TMOD&=0x0F;TMOD|=0x20
 #define    TIMER1_MODE3_ENABLE           TMOD&=0x0F;TMOD|=0x30
-/*    Timer2 function define  */
-#define    TIMER2_DIV_4                  T2MOD|=0x10;T2MOD&=0x9F
-#define    TIMER2_DIV_16                 T2MOD|=0x20;T2MOD&=0xAF
-#define    TIMER2_DIV_32                 T2MOD|=0x30;T2MOD&=0xBF
-#define    TIMER2_DIV_64                 T2MOD|=0x40;T2MOD&=0xCF
-#define    TIMER2_DIV_128                T2MOD|=0x50;T2MOD&=0xDF
-#define    TIMER2_DIV_256                T2MOD|=0x60;T2MOD&=0xEF
-#define    TIMER2_DIV_512                T2MOD|=0x70
+/*    Timer3 basic define  */
+#define    TIMER3_DIV_2                  T3CON&=0xF1;T3CON|=0x01
+#define    TIMER3_DIV_4                  T3CON&=0xF1;T3CON|=0x02
+#define    TIMER3_DIV_8                  T3CON&=0xF1;T3CON|=0x03
+#define    TIMER3_DIV_16                 T3CON&=0xF1;T3CON|=0x04
+#define    TIMER3_DIV_32                 T3CON&=0xF1;T3CON|=0x05
+#define    TIMER3_DIV_64                 T3CON&=0xF1;T3CON|=0x06
+#define    TIMER3_DIV_128                T3CON&=0xF1;T3CON|=0x07
+/*    Timer2 basic define  */
+#define    TIMER2_DIV_4                  T2MOD&=0x8F;T2MOD|=0x10
+#define    TIMER2_DIV_16                 T2MOD&=0x8F;T2MOD|=0x20
+#define    TIMER2_DIV_32                 T2MOD&=0x8F;T2MOD|=0x30
+#define    TIMER2_DIV_64                 T2MOD&=0x8F;T2MOD|=0x40
+#define    TIMER2_DIV_128                T2MOD&=0x8F;T2MOD|=0x50
+#define    TIMER2_DIV_256                T2MOD&=0x8F;T2MOD|=0x60
+#define    TIMER2_DIV_512                T2MOD&=0x8F;T2MOD|=0x70
 #define    TIMER2_AUTO_RELOAD_DELAY_MODE T2CON&=0xFE;T2MOD|=0x80;T2MOD|=0x08
 #define    TIMER2_COMPARE_CAPTURE_MODE   T2CON|=0x01;T2MOD&=0x7F;T2MOD|=0x04
 #define    TIMER2_CAP0_CAPTURE_MODE      T2CON&=0xFE;T2MOD=0x89
@@ -672,7 +680,7 @@ typedef __bit                 BIT;
 #define    PWM0_CLOCK_TIMER1                 CKCON|=0x40
 /*     PWM type define    */
 #define    PWM0_EDGE_TYPE                    PWMCON1&=0xEF
-#define    PWM0_CENTER_TYPE                  PWMCON1|=0x10      
+#define    PWM0_CENTER_TYPE                  PWMCON1|=0x10
 /*      PWM mode define   */
 #define    PWM0_IMDEPENDENT_MODE             PWMCON1&=0x3F
 #define    PWM0_COMPLEMENTARY_MODE           PWMCON1&=0x3F;PWMCON1|=0x40 

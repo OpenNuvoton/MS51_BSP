@@ -15,9 +15,12 @@
  */
 void WDT_ISR (void)   interrupt 10
 {
-  _push_(SFRS);
+    SFRS_TMP = SFRS;              /* for SFRS page */
     clr_WDCON_WDTF;
-  _pop_(SFRS);
+    if (SFRS_TMP)                 /* for SFRS page */
+    {
+      ENABLE_SFR_PAGE1;
+    }
 }
 #endif
 

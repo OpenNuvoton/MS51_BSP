@@ -24,7 +24,9 @@ void Timer0_ISR (void) __interrupt (1)          // vector=0x0B
     TL0 = TL0TMP;
 /* following clear flag for next interrupt */
     clr_TCON_TF0;
+
     GPIO_LED ^= 1;
+
     if (SFRS_TMP)                 /* for SFRS page */
     {
       ENABLE_SFR_PAGE1;
@@ -43,7 +45,7 @@ void main (void)
     MODIFY_HIRC(HIRC_24);
     GPIO_LED_QUASI_MODE;
 
-    Timer0_AutoReload_Interrupt_Initial(24,32000);
+    Timer0_AutoReload_Interrupt_Initial(24,1000);
     ENABLE_GLOBAL_INTERRUPT;
 
     while(1);

@@ -28,9 +28,10 @@ void Timer2_ISR(void)  __interrupt (5)
 /************************************************************************************************************/
 void main (void)
 {
+    MODIFY_HIRC(HIRC_24);
     GPIO_LED_QUASI_MODE;
 
-    Timer2_AutoReload_Interrupt_Initial(24,640000);
+    Timer2_AutoReload_Interrupt_Initial(24,650000);
     ENABLE_GLOBAL_INTERRUPT;
 
     while(1);

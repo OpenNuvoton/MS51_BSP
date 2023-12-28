@@ -50,7 +50,7 @@ void PWM0_ClockSource(uint8_t u8PWMCLKSource, uint8_t u8PWM0CLKDIV)
 void PWM0_ConfigOutputChannel(uint8_t u8PWM0ChannelNum,
                               uint8_t u8PWM0OPMode,
                               uint8_t u8PWM0PwmType,
-                              uint32_t u32PWM0Frequency,
+                              uint16_t u16PWM0Frequency,
                               uint16_t u16PWM0DutyCycle)
 {
   set_SFRS_SFRPAGE;
@@ -67,16 +67,48 @@ void PWM0_ConfigOutputChannel(uint8_t u8PWM0ChannelNum,
   }
   switch (u8PWM0ChannelNum)
   {
-      case 0:  PWM1H=(u32PWM0Frequency*u16PWM0DutyCycle/100)>>8;PWM0L=(u32PWM0Frequency*u16PWM0DutyCycle/100);break;
-      case 1:  PWM1H=(u32PWM0Frequency*u16PWM0DutyCycle/100)>>8;PWM1L=(u32PWM0Frequency*u16PWM0DutyCycle/100);break;
-      case 2:  PWM2H=(u32PWM0Frequency*u16PWM0DutyCycle/100)>>8;PWM2L=(u32PWM0Frequency*u16PWM0DutyCycle/100);break;
-      case 3:  PWM3H=(u32PWM0Frequency*u16PWM0DutyCycle/100)>>8;PWM3L=(u32PWM0Frequency*u16PWM0DutyCycle/100);break;
-      case 4:  PWM4H=(u32PWM0Frequency*u16PWM0DutyCycle/100)>>8;PWM4L=(u32PWM0Frequency*u16PWM0DutyCycle/100);break;
-      case 5:  PWM5H=(u32PWM0Frequency*u16PWM0DutyCycle/100)>>8;PWM5L=(u32PWM0Frequency*u16PWM0DutyCycle/100);break;
+      case 0:  PWM0H=(u16PWM0Frequency/100UL*u16PWM0DutyCycle)>>8;PWM0L=(u16PWM0Frequency/100UL*u16PWM0DutyCycle);break;
+      case 1:  PWM1H=(u16PWM0Frequency/100UL*u16PWM0DutyCycle)>>8;PWM1L=(u16PWM0Frequency/100UL*u16PWM0DutyCycle);break;
+      case 2:  PWM2H=(u16PWM0Frequency/100UL*u16PWM0DutyCycle)>>8;PWM2L=(u16PWM0Frequency/100UL*u16PWM0DutyCycle);break;
+      case 3:  PWM3H=(u16PWM0Frequency/100UL*u16PWM0DutyCycle)>>8;PWM3L=(u16PWM0Frequency/100UL*u16PWM0DutyCycle);break;
+      case 4:  PWM4H=(u16PWM0Frequency/100UL*u16PWM0DutyCycle)>>8;PWM4L=(u16PWM0Frequency/100UL*u16PWM0DutyCycle);break;
+      case 5:  PWM5H=(u16PWM0Frequency/100UL*u16PWM0DutyCycle)>>8;PWM5L=(u16PWM0Frequency/100UL*u16PWM0DutyCycle);break;
   }
-  PWMPH = u32PWM0Frequency>>8;
-  PWMPL = u32PWM0Frequency;
-  clr_SFRS_SFRPAGE;}
+  PWMPH = u16PWM0Frequency>>8;
+  PWMPL = u16PWM0Frequency;
+  clr_SFRS_SFRPAGE;
+}
+
+ /**
+ * @brief This function config PWM generator 
+ * @param[in] u8ChannelNum PWM channel number. Valid values are between 0~5
+ * @param[in] u8OPMode PWM run mode select from Independent, Complementary or Synchronized mode.
+ * @param[in] u8PwmType select Edge-Aligned Type or Center-Aligned Type
+ * @param[in] u32PWM0Frequency Target generator frequency, note the actually PWM period is 16bit value. from 0x0000 ~ 0xFFFF
+ * @param[in] u16DutyCycle Target generator duty cycle percentage. Valid range are between 0 ~ 100. 10 means 10%, 20 means 20%...
+ * @return none
+ * @note  none       
+ * @example PWM0_ChannelDuty(0,10);
+ */
+void PWM0_ChannelDuty(uint8_t u8PWM0ChannelNum,
+                      uint16_t u16PWM0DutyCycle)
+{
+  uint16_t  u16PWM0Frequency;
+
+  u16PWM0Frequency = (PWMPH<<8);
+  u16PWM0Frequency |= PWMPL;
+  set_SFRS_SFRPAGE;
+  switch (u8PWM0ChannelNum)
+  {
+      case 0:  PWM0H=(u16PWM0Frequency/100UL*u16PWM0DutyCycle)>>8;PWM0L=(u16PWM0Frequency/100UL*u16PWM0DutyCycle);break;
+      case 1:  PWM1H=(u16PWM0Frequency/100UL*u16PWM0DutyCycle)>>8;PWM1L=(u16PWM0Frequency/100UL*u16PWM0DutyCycle);break;
+      case 2:  PWM2H=(u16PWM0Frequency/100UL*u16PWM0DutyCycle)>>8;PWM2L=(u16PWM0Frequency/100UL*u16PWM0DutyCycle);break;
+      case 3:  PWM3H=(u16PWM0Frequency/100UL*u16PWM0DutyCycle)>>8;PWM3L=(u16PWM0Frequency/100UL*u16PWM0DutyCycle);break;
+      case 4:  PWM4H=(u16PWM0Frequency/100UL*u16PWM0DutyCycle)>>8;PWM4L=(u16PWM0Frequency/100UL*u16PWM0DutyCycle);break;
+      case 5:  PWM5H=(u16PWM0Frequency/100UL*u16PWM0DutyCycle)>>8;PWM5L=(u16PWM0Frequency/100UL*u16PWM0DutyCycle);break;
+  }
+  clr_SFRS_SFRPAGE;
+}
 
  /**
  * @brief This function config PWM Complementary pair inset dead zone time 

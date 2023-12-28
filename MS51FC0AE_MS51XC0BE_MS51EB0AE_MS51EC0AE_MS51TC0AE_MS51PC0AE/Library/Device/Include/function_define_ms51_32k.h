@@ -609,30 +609,36 @@ typedef __bit                 BIT;
 *   TIMER Function Define
 ********************************************************************************/
 #define    ENABLE_CLOCK_OUT                     set_CKCON_CLOEN;
-/*-------------------- Timer0 basic define --------------------*/
-#define    ENABLE_TIMER0_MODE0                  SFRS=0;TMOD&=0xF0               
+/*    Timer3 basic define  */
+#define    ENABLE_TIMER0_MODE0                  SFRS=0;TMOD&=0xF0
 #define    ENABLE_TIMER0_MODE1                  SFRS=0;TMOD&=0xF0;TMOD|=0x01
 #define    ENABLE_TIMER0_MODE2                  SFRS=0;TMOD&=0xF0;TMOD|=0x02
 #define    ENABLE_TIMER0_MODE3                  SFRS=0;TMOD&=0xF0;TMOD|=0x03
 #define    TIMER0_FSYS                          set_CKCON_T0M
 #define    TIMER0_FSYS_DIV12                    clr_CKCON_T0M
-
-/*-------------------- Timer1 basic define --------------------*/
-#define    ENABLE_TIMER1_MODE0                  SFRS=0;TMOD&=0x0F             
+/*    Timer1 basic define  */
+#define    ENABLE_TIMER1_MODE0                  SFRS=0;TMOD&=0x0F
 #define    ENABLE_TIMER1_MODE1                  SFRS=0;TMOD&=0x0F;TMOD|=0x10  
 #define    ENABLE_TIMER1_MODE2                  SFRS=0;TMOD&=0x0F;TMOD|=0x20  
 #define    ENABLE_TIMER1_MODE3                  SFRS=0;TMOD&=0x0F;TMOD|=0x30  
 #define    TIMER1_FSYS                          set_CKCON_T1M
 #define    TIMER1_FSYS_DIV12                    clr_CKCON_T1M
-
-/*-------------------- Timer2 basic define --------------------*/
-#define    TIMER2_DIV_4                  T2MOD|=0x10;T2MOD&=0x9F
-#define    TIMER2_DIV_16                 T2MOD|=0x20;T2MOD&=0xAF
-#define    TIMER2_DIV_32                 T2MOD|=0x30;T2MOD&=0xBF
-#define    TIMER2_DIV_64                 T2MOD|=0x40;T2MOD&=0xCF
-#define    TIMER2_DIV_128                T2MOD|=0x50;T2MOD&=0xDF
-#define    TIMER2_DIV_256                T2MOD|=0x60;T2MOD&=0xEF
-#define    TIMER2_DIV_512                T2MOD|=0x70
+/*    Timer3 basic define  */
+#define    TIMER3_DIV_2                  T3CON&=0xF1;T3CON|=0x01
+#define    TIMER3_DIV_4                  T3CON&=0xF1;T3CON|=0x02
+#define    TIMER3_DIV_8                  T3CON&=0xF1;T3CON|=0x03
+#define    TIMER3_DIV_16                 T3CON&=0xF1;T3CON|=0x04
+#define    TIMER3_DIV_32                 T3CON&=0xF1;T3CON|=0x05
+#define    TIMER3_DIV_64                 T3CON&=0xF1;T3CON|=0x06
+#define    TIMER3_DIV_128                T3CON&=0xF1;T3CON|=0x07
+/*    Timer2 basic define  */
+#define    TIMER2_DIV_4                  T2MOD&=0x8F;T2MOD|=0x10
+#define    TIMER2_DIV_16                 T2MOD&=0x8F;T2MOD|=0x20
+#define    TIMER2_DIV_32                 T2MOD&=0x8F;T2MOD|=0x30
+#define    TIMER2_DIV_64                 T2MOD&=0x8F;T2MOD|=0x40
+#define    TIMER2_DIV_128                T2MOD&=0x8F;T2MOD|=0x50
+#define    TIMER2_DIV_256                T2MOD&=0x8F;T2MOD|=0x60
+#define    TIMER2_DIV_512                T2MOD&=0x8F;T2MOD|=0x70
 #define    TIMER2_AUTO_RELOAD_DELAY_MODE T2CON&=0xFE;T2MOD|=0x80;T2MOD|=0x08
 #define    TIMER2_COMPARE_CAPTURE_MODE   T2CON|=0x01;T2MOD&=0x7F;T2MOD|=0x04
 #define    TIMER2_CAP0_CAPTURE_MODE      T2CON&=0xFE;T2MOD=0x89
@@ -642,18 +648,8 @@ typedef __bit                 BIT;
 #define    DISABLE_TIMER2_CAP1           CAPCON0&=0xDF
 #define    DISABLE_TIMER2_CAP2           CAPCON0&=0xEF
 
-/*-------------------- Timer3 basic define --------------------*/
-#define    TIMER3_DIV_1                         SFRS=0;T3CON&=0xF8;
-#define    TIMER3_DIV_2                         SFRS=0;T3CON&=0xF8;T3CON|=0x0
-#define    TIMER3_DIV_4                         SFRS=0;T3CON&=0xF8;T3CON|=0x0
-#define    TIMER3_DIV_8                         SFRS=0;T3CON&=0xF8;T3CON|=0x0
-#define    TIMER3_DIV_16                        SFRS=0;T3CON&=0xF8;T3CON|=0x0
-#define    TIMER3_DIV_32                        SFRS=0;T3CON&=0xF8;T3CON|=0x0
-#define    TIMER3_DIV_64                        SFRS=0;T3CON&=0xF8;T3CON|=0x0
-#define    TIMER3_DIV_128                       SFRS=0;T3CON|=0x07
-
 /*-------------------- Timer2 Capture define --------------------*/
-//--- Falling Edge -----
+/*--- Falling Edge -----*/
 #define  IC0_P12_CAP0_FALLINGEDGE_CAPTURE       SFRS=0;CAPCON1&=0xFC;CAPCON3&=0xF0;CAPCON3|=0x00;CAPCON0|=0x10;CAPCON2|=0x10
 #define  IC1_P11_CAP0_FALLINGEDGE_CAPTURE       SFRS=0;CAPCON1&=0xFC;CAPCON3&=0xF0;CAPCON3|=0x01;CAPCON0|=0x10;CAPCON2|=0x10
 #define  IC2_P10_CAP0_FALLINGEDGE_CAPTURE       SFRS=0;CAPCON1&=0xFC;CAPCON3&=0xF0;CAPCON3|=0x02;CAPCON0|=0x10;CAPCON2|=0x10

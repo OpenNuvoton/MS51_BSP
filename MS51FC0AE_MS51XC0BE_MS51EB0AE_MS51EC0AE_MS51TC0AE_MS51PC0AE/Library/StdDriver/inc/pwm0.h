@@ -29,8 +29,10 @@ void PWM0_ClockSource(uint8_t u8PWMCLKSource, uint8_t u8PWM0CLKDIV);
 void PWM0_ConfigOutputChannel(uint8_t u8PWM0ChannelNum,
                               uint8_t u8PWM0OPMode,
                               uint8_t u8PWM0PwmType,
-                              uint32_t u32PWM0Frequency,
+                              uint16_t u16PWM0Frequency,
                               uint16_t u16PWM0DutyCycle);
+void PWM0_ChannelDuty(uint8_t u8PWM0ChannelNum,
+                      uint16_t u16PWM0DutyCycle);
 void PWM0_DeadZoneEnable(uint8_t u8PWM0Pair, uint16_t u16PWM0DZValue);
 void PWM0_DeadZone_ALL_Disable(void);
 void PWM0_RUN(void);

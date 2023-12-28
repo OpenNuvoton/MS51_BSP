@@ -48,7 +48,7 @@ void main (void)
     MODIFY_HIRC(HIRC_24);
     GPIO_LED_QUASI_MODE;
 
-    Timer1_AutoReload_Interrupt_Initial(24,6400);
+    Timer1_AutoReload_Interrupt_Initial(24,1000);
     ENABLE_GLOBAL_INTERRUPT;
 
     while(1);

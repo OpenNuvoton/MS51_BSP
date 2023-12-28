@@ -12,7 +12,7 @@
   * @param[in] u32SYSCLK define Fsys clock value. for example 24000000, use the real Fsys value.
   *                       - \ref 24000000 (use HIRC 24MHz)
   *                       - \ref 16000000 (use HIRC 16MHz)
-  * @param[in] u8CNT define count time.
+  * @param[in] u8CNT define count time. Max. value is 65536
   * @param[in] u6DLYUnit define delay time base is us. From 1~10000, the maxima value please not over 10000.
   *                       - \ref 1000 (1ms)
   *                       - \ref 100 (100us)
@@ -22,12 +22,11 @@
 */
 void Timer0_Delay(uint32_t u32SYSCLK, uint16_t u16CNT, uint16_t u16DLYUnit)
 {
-      uint8_t TL0TMP, TH0TMP;
-  
-      TIMER0_FSYS_DIV12;                                  //T0M=0, Timer0 Clock = Fsys/12
-      ENABLE_TIMER0_MODE1;                                   //Timer0 is 16-bit mode
-      TL0TMP = LOBYTE(65535-((u32SYSCLK/1000000)*u16DLYUnit/12));
-      TH0TMP = HIBYTE(65535-((u32SYSCLK/1000000)*u16DLYUnit/12));
+    uint8_t TL0TMP, TH0TMP;
+    TIMER0_FSYS_DIV12;                                  //T0M=0, Timer0 Clock = Fsys/12
+    ENABLE_TIMER0_MODE1;                                   //Timer0 is 16-bit mode
+    TL0TMP = LOBYTE(65535ul-((u32SYSCLK/1000000ul)*u16DLYUnit/12ul));
+    TH0TMP = HIBYTE(65535ul-((u32SYSCLK/1000000ul)*u16DLYUnit/12ul));
   
     while (u16CNT != 0)
     {
@@ -39,7 +38,6 @@ void Timer0_Delay(uint32_t u32SYSCLK, uint16_t u16CNT, uint16_t u16DLYUnit)
       clr_TCON_TR0;                       //Stop Timer0
       u16CNT --;
     }
-//    clr_TCON_TR0;                                     //Stop Timer0
 }
 
 /**
@@ -61,8 +59,8 @@ void Timer1_Delay(uint32_t u32SYSCLK, uint16_t u16CNT, uint16_t u16DLYUnit)
 
     TIMER1_FSYS_DIV12;                                 //T1M=0, Timer1 Clock = Fsys/12
     ENABLE_TIMER1_MODE1;                                //Timer1 is 16-bit mode
-    TL1TMP = LOBYTE(65535-((u32SYSCLK/1000000)*u16DLYUnit)/12);
-    TH1TMP = HIBYTE(65535-((u32SYSCLK/1000000)*u16DLYUnit)/12);
+    TL1TMP = LOBYTE(65535ul-((u32SYSCLK/1000000ul)*u16DLYUnit)/12ul);
+    TH1TMP = HIBYTE(65535ul-((u32SYSCLK/1000000ul)*u16DLYUnit)/12ul);
   
     while (u16CNT != 0)
     {
@@ -93,8 +91,8 @@ void Timer1_Delay(uint32_t u32SYSCLK, uint16_t u16CNT, uint16_t u16DLYUnit)
 */
 void Timer2_Delay(uint32_t u32SYSCLK,uint16_t u16TMDIV, uint16_t u16CNT, uint32_t u32DLYUnit)
 {
-	uint8_t TL2TMP,TH2TMP;
-  
+    uint8_t TL2TMP,TH2TMP;
+
     SFRS = 0x00;
     switch (u16TMDIV)
     {
@@ -110,8 +108,8 @@ void Timer2_Delay(uint32_t u32SYSCLK,uint16_t u16TMDIV, uint16_t u16CNT, uint32_
     clr_T2CON_CMRL2;                                  //Timer 2 as auto-reload mode
     set_T2MOD_LDEN;
     set_T2MOD_CMPCR;                                  //Timer 2 value is auto-cleared as 0000H when a compare match occurs.
-    TL2TMP = LOBYTE(65536-((u32SYSCLK/1000000)*u32DLYUnit/u16TMDIV));
-    TH2TMP = HIBYTE(65536-((u32SYSCLK/1000000)*u32DLYUnit/u16TMDIV));
+    TL2TMP = LOBYTE(65536ul-((u32SYSCLK/1000000ul)*u32DLYUnit/u16TMDIV));
+    TH2TMP = HIBYTE(65536ul-((u32SYSCLK/1000000ul)*u32DLYUnit/u16TMDIV));
     while (u16CNT != 0)
     {
       TL2 = TL2TMP;
@@ -140,7 +138,7 @@ void Timer2_Delay(uint32_t u32SYSCLK,uint16_t u16TMDIV, uint16_t u16CNT, uint32_
 */
 void Timer3_Delay(uint32_t u32SYSCLK,uint8_t u8TMDIV, uint16_t u16CNT, uint32_t u32DLYUnit)
 {
-	uint8_t TL3TMP,TH3TMP;
+    uint8_t TL3TMP,TH3TMP;
   
     SFRS = 0x00;
     switch (u8TMDIV)
@@ -154,8 +152,8 @@ void Timer3_Delay(uint32_t u32SYSCLK,uint8_t u8TMDIV, uint16_t u16CNT, uint32_t 
       case 64:T3CON&=0xF8;T3CON|=0x06; break;
       case 128:T3CON&=0xF8;T3CON|=0x07; break;
     }
-    TL3TMP = LOBYTE(65536-((u32SYSCLK/1000000)*u32DLYUnit/u8TMDIV));
-   TH3TMP = HIBYTE(65536-((u32SYSCLK/1000000)*u32DLYUnit/u8TMDIV));
+    TL3TMP = LOBYTE(65536ul-((u32SYSCLK/1000000ul)*u32DLYUnit/u8TMDIV));
+    TH3TMP = HIBYTE(65536ul-((u32SYSCLK/1000000ul)*u32DLYUnit/u8TMDIV));
 
     while (u16CNT != 0)
     {
@@ -170,22 +168,4 @@ void Timer3_Delay(uint32_t u32SYSCLK,uint8_t u8TMDIV, uint16_t u16CNT, uint32_t 
     }
     clr_T3CON_TR3;
 }
-
-
-//****************************************************************************************************************  
-//**** Timer Interrupt enable setting  
-//**** 1. Delay value
-//**** 2. Define unit
-//**** For example: Timer3_Delay(5,UNIT_100US) = Delay 100us
-void Timer_Interrupt_Enable(uint8_t u8TM)
-{
-    switch(u8TM)
-    {
-      case TIMER0: set_IE_ET0;break;
-      case TIMER1: set_IE_ET1;break;
-      case TIMER2: set_EIE_ET2;break;
-      case TIMER3: set_EIE1_ET3;break;
-    }
-}
-
 

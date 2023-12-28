@@ -122,4 +122,3 @@ void Timer0_Delay(uint32_t u32SYSCLK, uint16_t u16CNT, uint16_t u6DLYUnit);
 void Timer1_Delay(uint32_t u32SYSCLK, uint16_t u16CNT, uint16_t u6DLYUnit);
 void Timer2_Delay(uint32_t u32SYSCLK,uint16_t u16TMDIV, uint16_t u16CNT, uint32_t u32DLYUnit);
 void Timer3_Delay(uint32_t u32SYSCLK,uint8_t u8TMDIV, uint16_t u16CNT, uint32_t u32DLYUnit);
-void Timer_Interrupt_Enable(uint8_t u8TM);

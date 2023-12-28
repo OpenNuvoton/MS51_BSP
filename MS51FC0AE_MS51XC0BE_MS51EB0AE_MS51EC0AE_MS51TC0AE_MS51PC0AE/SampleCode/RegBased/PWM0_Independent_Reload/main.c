@@ -47,10 +47,10 @@ void main (void)
     while(1)
     {
       Timer2_Delay(24000000,128,3000,1000);
-      PWM0_ConfigOutputChannel(0,Independent,EdgeAligned,0x6FF,90);
+      PWM0_ChannelDuty(0,90);
       PWM0_Reload();
       Timer2_Delay(24000000,128,3000,1000);
-      PWM0_ConfigOutputChannel(0,Independent,EdgeAligned,0x6FF,10);
+      PWM0_ChannelDuty(0,10);
       PWM0_Reload();
     }      
 }

@@ -48,3 +48,8 @@
 
 2023/09
 1. MS51_32K                      Added UART2 ~ UART4  printf project.
+
+
+2023/12
+1.pwm.c                          Update Reload function.
+2.timer.c                        Update description.
