@@ -75,9 +75,10 @@ uint8_t UART4_Receive_Data(void)
  */ 
 void UART4_Send_Data(uint8_t c)
 {
-    clr_SC2CR0_TXOFF;
+	clr_SC2CR0_TXOFF;
     SC2DR = c;
     while(!(SC2TSR&SET_BIT3));
-    clr_SC2CR0_TXOFF;
+    while(SC2TSR&SET_BIT7);
+    set_SC2CR0_TXOFF;
 }
 

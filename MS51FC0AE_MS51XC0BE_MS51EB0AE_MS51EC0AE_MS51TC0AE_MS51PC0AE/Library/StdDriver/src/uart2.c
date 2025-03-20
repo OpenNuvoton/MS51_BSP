@@ -79,7 +79,8 @@ void UART2_Send_Data(uint8_t c)
       clr_SC0CR0_TXOFF;
       SC0DR = c;
       while(!(SC0TSR&SET_BIT3));
-      clr_SC0CR0_TXOFF;
+      while(SC0TSR&SET_BIT7);
+      set_SC0CR0_TXOFF;
 }
 
 

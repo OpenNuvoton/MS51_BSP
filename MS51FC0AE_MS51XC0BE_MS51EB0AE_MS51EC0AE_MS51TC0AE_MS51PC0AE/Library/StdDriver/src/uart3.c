@@ -76,9 +76,10 @@ uint8_t UART3_Receive_Data(void)
  */ 
 void UART3_Send_Data(uint8_t c)
 {
-    clr_SC1CR0_TXOFF;
+	clr_SC1CR0_TXOFF;
     SC1DR = c;
     while(!(SC1TSR&SET_BIT3));
-    clr_SC1CR0_TXOFF;
+    while(SC1TSR&SET_BIT7);
+    set_SC1CR0_TXOFF;
 }
 
