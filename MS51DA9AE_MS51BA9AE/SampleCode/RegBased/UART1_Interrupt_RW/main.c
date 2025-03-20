@@ -63,9 +63,11 @@ void main (void)
     {
       if (uart1_receive_flag)
       {
-          GPIO_LED ^= 1;      //Receive each byte P12 toggle, never work under debug mode
-          UART_Send_Data(UART1,uart1_receive_data);
           uart1_receive_flag = 0;
+		  DISABLE_UART1_INTERRUPT;
+          UART_Send_Data(UART1,uart1_receive_data);
+		  ENABLE_UART1_INTERRUPT;
+          GPIO_LED ^= 1;      //Receive each byte P12 toggle, never work under debug mode
       }
     }
 }

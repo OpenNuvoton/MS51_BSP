@@ -49,6 +49,7 @@ void main(void)
     printf ("\n\r               = 3 kHz");
 
     ENABLE_PWM0_CH2_P10_OUTPUT;
+	P10_PUSHPULL_MODE;
     PWM0_INT_PWM2;
     PWM0_FALLING_INT;           /*Setting Interrupt happen when PWM0 falling signal */
   

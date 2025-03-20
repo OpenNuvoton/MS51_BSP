@@ -17,7 +17,7 @@
   */
 void GPIO_Pull_Enable(uint8_t u8Port, uint8_t u8PinMask, uint8_t u8PullMode)
 {
-  SFRS=1;
+  SFRS=2;
   switch (u8PullMode)
   {
     case PULLUP:
@@ -53,7 +53,7 @@ void GPIO_Pull_Enable(uint8_t u8Port, uint8_t u8PinMask, uint8_t u8PullMode)
   */
 void GPIO_Pull_Disable(uint8_t u8Port, uint8_t u8PinMask, uint8_t u8PullMode)
 {
-  SFRS=1;
+  SFRS=2;
   switch (u8PullMode)
   {
     case PullUp:
@@ -84,20 +84,21 @@ void GPIO_Pull_Disable(uint8_t u8Port, uint8_t u8PinMask, uint8_t u8PullMode)
   * @param[in] u8PinMask Decides  bit of the port ( from SET_BIT0~SET_BIT7 use "|" to define multi bit)
   * @param[in] u8Mode Decides the GPIO mode GPIO_MODE_INPUT / GPIO_MODE_PUSHPULL / GPIO_MODE_QUASI / GPIO_MODE_OPENDRAI for mode to select.
   * @return  None
-  * @note Confirm multi function pin is defined as GPIO first. call function_define_MS51_32K.h to define.
+  * @note Confirm multi function pin is defined as GPIO first. call function_define_MG51_64K.h to define.
   * @exmaple :   GPIO_SetMode(Port1,BIT0,GPIO_MODE_QUASI);
   */
 void GPIO_SetMode(uint8_t u8Port, uint8_t u8PinMask, uint8_t u8Mode)
 {
-    uint8_t u8PnM1=0, u8PnM2 =0;
-
-    SFRS = 1;
+    uint8_t u8PnM1, u8PnM2;
+    u8PnM1=0;
+	u8PnM2 =0;
+	
     switch(u8Port)
     {
-        case Port0:  u8PnM1 = P0M1;  u8PnM2 = P0M2;  break;
-        case Port1:  u8PnM1 = P1M1;  u8PnM2 = P1M2;  break;
-        case Port2:  u8PnM1 = P2M1;  u8PnM2 = P2M2;  break;
-        case Port3:  u8PnM1 = P3M1;  u8PnM2 = P3M2;  break;
+        case Port0:  SFRS=0; u8PnM1 = P0M1;  u8PnM2 = P0M2;  break;
+        case Port1:  SFRS=0; u8PnM1 = P1M1;  u8PnM2 = P1M2;  break;
+        case Port2:  SFRS=2; u8PnM1 = P2M1;  u8PnM2 = P2M2;  break;
+        case Port3:  SFRS=0; u8PnM1 = P3M1;  u8PnM2 = P3M2;  break;
     }
     switch(u8Mode)
     {
@@ -120,10 +121,114 @@ void GPIO_SetMode(uint8_t u8Port, uint8_t u8PinMask, uint8_t u8Mode)
     }
     switch(u8Port)
     {
-        case Port0:  P0M1 = u8PnM1;  P0M2 = u8PnM2;  break;
-        case Port1:  P1M1 = u8PnM1;  P1M2 = u8PnM2;  break;
-        case Port2:  P2M1 = u8PnM1;  P2M2 = u8PnM2;  break;
-        case Port3:  P3M1 = u8PnM1;  P3M2 = u8PnM2;  break;
+        case Port0:  SFRS=0; P0M1 = u8PnM1;  P0M2 = u8PnM2;  break;
+        case Port1:  SFRS=0; P1M1 = u8PnM1;  P1M2 = u8PnM2;  break;
+        case Port2:  SFRS=2; P2M1 = u8PnM1;  P2M2 = u8PnM2;  break;
+        case Port3:  SFRS=0; P3M1 = u8PnM1;  P3M2 = u8PnM2;  break;
+    }
+}
 
+
+ /**
+  * @brief GPIO Schmitt Triggered Input enable / disable. 
+  * @param[in] u8Port Decides the GPIO port number 
+  *                  - \ref Port 0
+  *                  - \ref Port 1
+  *                  - \ref Port 2
+  *                  - \ref Port 3
+  *                  - \ref Port 4
+  *                  - \ref Port 5
+  * @param[in] u8PinMask Decides  bit of the port (SET_BIT0~SET_BIT7 use "|" to define multi bit).
+  *                  - \ref SET_BIT0
+  *                  - \ref SET_BIT1
+  *                  - \ref SET_BIT2
+  *                  - \ref SET_BIT3
+  *                  - \ref SET_BIT4
+  *                  - \ref SET_BIT5
+  *                  - \ref SET_BIT6
+  *                  - \ref SET_BIT7
+  *                  - \ref SET_BIT0|SET_BIT7
+  *                  - \ref 0x81
+  * @param[in] u8SStauts Decides the GPIO Schmitt Triggered status
+  *                  - \ref Enable
+  *                  - \ref Disable
+  * @return  None
+  * @note none
+  * @exmaple :   GPIO_Pull_Enable(P1,SET_BIT0 | SET_BIT5,PullUp);
+  */
+void GPIO_SchmittTrigger(unsigned char u8Port, unsigned char u8PinMask, unsigned char u8SStauts)
+{
+  SFRS=1;
+  switch (u8SStauts)
+  {
+    case Enable:
+        switch(u8Port)
+        {
+          case Port0:  P0S |= u8PinMask;  break;
+          case Port1:  P1S |= u8PinMask;  break;
+          case Port2:  SFRS=2; P2S |= u8PinMask;  break;
+          case Port3:  P3S |= u8PinMask;  break;
+        }
+    break;
+    case Disable:
+        switch(u8Port)
+        {
+          case Port0:  P0S &= ~u8PinMask;  break;
+          case Port1:  P1S &= ~u8PinMask;  break;
+          case Port2:  SFRS=2; P2S &= ~u8PinMask;  break;
+          case Port3:  P3S &= ~u8PinMask;  break;
+        }
+    break;
+    }
+POP_SFRS;
+}
+
+ /**
+  * @brief GPIO Slew rate Status enable / disable. 
+  * @param[in] u8Port Decides the GPIO port number 
+  *                  - \ref Port 0
+  *                  - \ref Port 1
+  *                  - \ref Port 2
+  *                  - \ref Port 3
+  * @param[in] u8PinMask Decides  bit of the port (SET_BIT0~SET_BIT7 use "|" to define multi bit).
+  *                  - \ref SET_BIT0
+  *                  - \ref SET_BIT1
+  *                  - \ref SET_BIT2
+  *                  - \ref SET_BIT3
+  *                  - \ref SET_BIT4
+  *                  - \ref SET_BIT5
+  *                  - \ref SET_BIT6
+  *                  - \ref SET_BIT7
+  *                  - \ref SET_BIT0|SET_BIT7
+  * @param[in] u8SRStauts Decides the GPIO Slew rate status
+  *                  - \ref Enable
+  *                  - \ref Disable
+  * @return  None
+  * @note none
+  * @exmaple :   GPIO_Pull_Enable(P1,SET_BIT0 | SET_BIT5,PullUp);
+  */
+void GPIO_SlewRate(unsigned char u8Port, unsigned char u8PinMask, unsigned char u8SRStauts)
+{
+  SFRS=1;
+  switch (u8SRStauts)
+  {
+    case Enable:
+        switch(u8Port)
+        {
+          case Port0:  P0SR |= u8PinMask;  break;
+          case Port1:  P1SR |= u8PinMask;  break;
+          case Port2:  SFRS=2; P2SR |= u8PinMask;  break;
+          case Port3:  P3SR |= u8PinMask;  break;
+        }
+    break;
+    case Disable:
+        switch(u8Port)
+        {
+          case Port0:  P0SR &= ~u8PinMask;  break;
+          case Port1:  P1SR &= ~u8PinMask;  break;
+          case Port2:  SFRS=2;P2SR &= ~u8PinMask;  break;
+          case Port3:  P3SR &= ~u8PinMask;  break;
+        }
+    break;
     }
 }

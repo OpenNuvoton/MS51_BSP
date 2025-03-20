@@ -6,7 +6,7 @@
 #define CMD_CONNECT          0xAE
 #define CMD_SYNC_PACKNO      0xA4
 #define CMD_GET_FWVER        0xA6
-#define FW_VERSION           0x27
+#define FW_VERSION           0x28
 #define CMD_RUN_APROM        0xAB
 #define CMD_GET_DEVICEID     0xB1
 #define CMD_ERASE_ALL        0xA3
@@ -80,7 +80,7 @@ void MODIFY_HIRC_24(void);
 void MODIFY_HIRC_16(void);
 void UART0_ini_115200_24MHz(void);
 void Package_checksum(void);
-
+void Timer1_Delay10ms(UINT32 u32CNT);
 void MODIFY_HIRC_24(void);
 void MODIFY_HIRC_16(void);
 void READ_ID(void);

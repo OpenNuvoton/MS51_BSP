@@ -42,7 +42,7 @@
 	</linkedResources>
 	<filteredResources>
 		<filter>
-			<id>0</id>
+			<id>1703744217668</id>
 			<name>Library</name>
 			<type>5</type>
 			<matcher>
@@ -51,12 +51,21 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>0</id>
+			<id>1703744217679</id>
 			<name>Library</name>
 			<type>5</type>
 			<matcher>
 				<id>org.eclipse.ui.ide.multiFilter</id>
 				<arguments>1.0-name-matches-false-false-timer.c</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1703744217690</id>
+			<name>Library</name>
+			<type>5</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-sys.c</arguments>
 			</matcher>
 		</filter>
 	</filteredResources>

@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='iso-8859-1'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project>
     <fileVersion>3</fileVersion>
     <configuration>
@@ -97,7 +97,7 @@
                 </option>
                 <option>
                     <name>DPTR Addresses</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>CodeBankReg</name>
@@ -133,7 +133,7 @@
                 </option>
                 <option>
                     <name>RTConfigPath</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>RTLibraryPath</name>
@@ -212,7 +212,7 @@
                 </option>
                 <option>
                     <name>PDATA 16-31 register address</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>General Far22 Heap Size</name>
@@ -259,11 +259,11 @@
                 </option>
                 <option>
                     <name>DPC Address</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>AutoModificationType</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>UseHWMulDivUnit</name>
@@ -271,11 +271,11 @@
                 </option>
                 <option>
                     <name>UseMDU</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>AdditionalDriver</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>OGChipConfigPath</name>
@@ -305,7 +305,7 @@
                 </option>
                 <option>
                     <name>CCDefines</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>CCPreprocFile</name>
@@ -345,19 +345,19 @@
                 </option>
                 <option>
                     <name>CCDiagSuppress</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>CCDiagRemark</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>CCDiagWarning</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>CCDiagError</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>CCObjPrefix</name>
@@ -389,7 +389,7 @@
                 </option>
                 <option>
                     <name>CCObjModuleName</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>CCDebugInfo</name>
@@ -441,7 +441,7 @@
                 </option>
                 <option>
                     <name>PreInclude</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>CCLibConfigHeader</name>
@@ -461,7 +461,7 @@
                 </option>
                 <option>
                     <name>Compiler Extra Options Edit</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>CCIncludePath2</name>
@@ -661,7 +661,7 @@
                 </option>
                 <option>
                     <name>ADefines</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>AWarnEnable</name>
@@ -673,15 +673,15 @@
                 </option>
                 <option>
                     <name>AWarnOne</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>AWarnRange1</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>AWarnRange2</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>Assembler Extra Options Check</name>
@@ -689,7 +689,7 @@
                 </option>
                 <option>
                     <name>Assembler Extra Options Edit</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>AMaxErrOn</name>
@@ -705,7 +705,7 @@
                 </option>
                 <option>
                     <name>Include directories</name>
-                    <state />
+                    <state></state>
                 </option>
             </data>
         </settings>
@@ -713,8 +713,8 @@
             <name>CUSTOM</name>
             <archiveVersion>3</archiveVersion>
             <data>
-                <extensions />
-                <cmdline />
+                <extensions></extensions>
+                <cmdline></cmdline>
                 <hasPrio>0</hasPrio>
             </data>
         </settings>
@@ -727,7 +727,7 @@
             <name>BUILDACTION</name>
             <archiveVersion>1</archiveVersion>
             <data>
-                <prebuild />
+                <prebuild></prebuild>
                 <postbuild>cmd /C ""$TOOLKIT_DIR$\..\..\..\Nuvoton Tools\Nu-Link_IAR\Hex2Bin.exe" "$PROJ_DIR$\Debug\Exe\$TARGET_BNAME$.a51""</postbuild>
             </data>
         </settings>
@@ -770,7 +770,7 @@
                 </option>
                 <option>
                     <name>XDefines</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>AlwaysOutput</name>
@@ -806,7 +806,7 @@
                 </option>
                 <option>
                     <name>XIncludes</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>ModuleStatus</name>
@@ -822,7 +822,7 @@
                 </option>
                 <option>
                     <name>XclFileSlave</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>Config Include Dir</name>
@@ -888,15 +888,15 @@
                 </option>
                 <option>
                     <name>SuppressDiags</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>TreatAsWarn</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>TreatAsErr</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>ModuleLocalSym</name>
@@ -980,19 +980,19 @@
                 </option>
                 <option>
                     <name>RawBinaryFile</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>RawBinarySymbol</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>RawBinarySegment</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>RawBinaryAlign</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>XLinkMisraHandler</name>
@@ -1036,7 +1036,7 @@
                 </option>
                 <option>
                     <name>Linker Extra Options Edit</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>CrcAlign</name>
@@ -1090,7 +1090,7 @@
                 <debug>1</debug>
                 <option>
                     <name>XARInputs</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>XAROverride</name>
@@ -1209,7 +1209,7 @@
                 </option>
                 <option>
                     <name>DPTR Addresses</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>CodeBankReg</name>
@@ -1241,7 +1241,7 @@
                 </option>
                 <option>
                     <name>RTDescription</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>RTConfigPath</name>
@@ -1258,7 +1258,7 @@
                 </option>
                 <option>
                     <name>Input description</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>Output variant</name>
@@ -1267,7 +1267,7 @@
                 </option>
                 <option>
                     <name>Output description</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>GeneralEnableMisra</name>
@@ -1371,11 +1371,11 @@
                 </option>
                 <option>
                     <name>DPC Address</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>AutoModificationType</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>UseHWMulDivUnit</name>
@@ -1383,11 +1383,11 @@
                 </option>
                 <option>
                     <name>UseMDU</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>AdditionalDriver</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>OGChipConfigPath</name>
@@ -1413,7 +1413,7 @@
                 </option>
                 <option>
                     <name>OutputFile</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>CCDefines</name>
@@ -1457,19 +1457,19 @@
                 </option>
                 <option>
                     <name>CCDiagSuppress</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>CCDiagRemark</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>CCDiagWarning</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>CCDiagError</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>CCObjPrefix</name>
@@ -1501,7 +1501,7 @@
                 </option>
                 <option>
                     <name>CCObjModuleName</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>CCDebugInfo</name>
@@ -1553,7 +1553,7 @@
                 </option>
                 <option>
                     <name>PreInclude</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>CCLibConfigHeader</name>
@@ -1573,11 +1573,11 @@
                 </option>
                 <option>
                     <name>Compiler Extra Options Edit</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>CCIncludePath2</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>CCStdIncCheck</name>
@@ -1687,7 +1687,7 @@
                 </option>
                 <option>
                     <name>OutputFile</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>ACaseSensitivity</name>
@@ -1772,7 +1772,7 @@
                 </option>
                 <option>
                     <name>ADefines</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>AWarnEnable</name>
@@ -1784,15 +1784,15 @@
                 </option>
                 <option>
                     <name>AWarnOne</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>AWarnRange1</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>AWarnRange2</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>Assembler Extra Options Check</name>
@@ -1800,7 +1800,7 @@
                 </option>
                 <option>
                     <name>Assembler Extra Options Edit</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>AMaxErrOn</name>
@@ -1816,7 +1816,7 @@
                 </option>
                 <option>
                     <name>Include directories</name>
-                    <state />
+                    <state></state>
                 </option>
             </data>
         </settings>
@@ -1824,8 +1824,8 @@
             <name>CUSTOM</name>
             <archiveVersion>3</archiveVersion>
             <data>
-                <extensions />
-                <cmdline />
+                <extensions></extensions>
+                <cmdline></cmdline>
                 <hasPrio>0</hasPrio>
             </data>
         </settings>
@@ -1838,8 +1838,8 @@
             <name>BUILDACTION</name>
             <archiveVersion>1</archiveVersion>
             <data>
-                <prebuild />
-                <postbuild />
+                <prebuild></prebuild>
+                <postbuild></postbuild>
             </data>
         </settings>
         <settings>
@@ -1863,7 +1863,7 @@
                 </option>
                 <option>
                     <name>OutputFile</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>OutputFormat</name>
@@ -1877,11 +1877,11 @@
                 </option>
                 <option>
                     <name>SecondaryOutputFile</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>XDefines</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>AlwaysOutput</name>
@@ -1933,7 +1933,7 @@
                 </option>
                 <option>
                     <name>XclFileSlave</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>Config Include Dir</name>
@@ -1999,15 +1999,15 @@
                 </option>
                 <option>
                     <name>SuppressDiags</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>TreatAsWarn</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>TreatAsErr</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>ModuleLocalSym</name>
@@ -2029,7 +2029,7 @@
                 </option>
                 <option>
                     <name>xcProgramEntryLabel</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>DebugInformation</name>
@@ -2057,7 +2057,7 @@
                 </option>
                 <option>
                     <name>ExtraOutputFile</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>ExtraOutputFormat</name>
@@ -2091,19 +2091,19 @@
                 </option>
                 <option>
                     <name>RawBinaryFile</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>RawBinarySymbol</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>RawBinarySegment</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>RawBinaryAlign</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>XLinkMisraHandler</name>
@@ -2147,7 +2147,7 @@
                 </option>
                 <option>
                     <name>Linker Extra Options Edit</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>CrcAlign</name>
@@ -2201,7 +2201,7 @@
                 <debug>0</debug>
                 <option>
                     <name>XARInputs</name>
-                    <state />
+                    <state></state>
                 </option>
                 <option>
                     <name>XAROverride</name>
@@ -2231,6 +2231,9 @@
         </file>
         <file>
             <name>$PROJ_DIR$\..\..\..\..\Library\StdDriver\src\putchar.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\Library\StdDriver\src\sys.c</name>
         </file>
         <file>
             <name>$PROJ_DIR$\..\..\..\..\Library\StdDriver\src\timer.c</name>

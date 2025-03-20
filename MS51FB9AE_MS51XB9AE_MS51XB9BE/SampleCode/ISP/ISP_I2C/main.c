@@ -66,8 +66,8 @@ while(1)
               if(flash_address==vo16temp)
               {
                 g_progarmflag=0;
-				g_timer0Over =1;
-                 goto END_2;          
+                g_timer1Over = 1;
+                goto END_2;          
               }
             } 
 END_2:                
@@ -289,6 +289,12 @@ END_1:
       //For connect timer out  
       if(g_timer0Over==1)
       {       
+       goto _APROM;
+      }
+			//For transfer finish quick timeout
+      if(g_timer1Over==1)
+      {
+       Timer1_Delay10ms(20);
        goto _APROM;
       }
 }   

@@ -48,8 +48,9 @@ void main (void)
       if (uart1_receive_flag)
       {   
           uart1_receive_flag = 0;
+		  DISABLE_UART1_INTERRUPT;
           UART_Send_Data(UART1,uart1_receive_data);
-
+		  ENABLE_UART1_INTERRUPT;
       }
     }
 }

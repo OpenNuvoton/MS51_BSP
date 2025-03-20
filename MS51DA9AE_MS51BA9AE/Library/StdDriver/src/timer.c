@@ -235,10 +235,10 @@ void Timer3_AutoReload_Interrupt_Initial(uint8_t u8SYSCLK, uint32_t u32DLYUnit)
 {
     SFRS = 0;
     TIMER3_DIV_128;                                   /*  Timer 3 divider fixed with 128.*/
-    TIMER2CT = 65535ul-(u8SYSCLK*u32DLYUnit/128ul);
-    TIMER2CT &= 0xFFFF;
-    RH3 = HIBYTE(TIMER2CT);
-    RL3 = LOBYTE(TIMER2CT);
+    TIMER3CT = 65535ul-(u8SYSCLK*u32DLYUnit/128ul);
+    TIMER3CT &= 0xFFFF;
+    RH3 = HIBYTE(TIMER3CT);
+    RL3 = LOBYTE(TIMER3CT);
     clr_T3CON_TF3;
     set_T3CON_TR3;                                   /* Trigger Timer3  */
     ENABLE_TIMER3_INTERRUPT;                         /* Enable timer3 Interrupt */

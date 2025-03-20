@@ -26,7 +26,7 @@
 								</option>
 								<option id="sdcc.c.compiler.option.warnings.nowarn.732171098" name="Inhibit all warnings (-w)" superClass="sdcc.c.compiler.option.warnings.nowarn" useByScannerDiscovery="false" value="false" valueType="boolean"/>
 								<option id="sdcc.c.compiler.category.other.memorymodel.1002540649" name="Memory Model" superClass="sdcc.c.compiler.category.other.memorymodel" useByScannerDiscovery="false" value="sdcc.c.compiler.category.other.memorymodel.large" valueType="enumerated"/>
-								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sdcc.c.compiler.option.preprocessor.def.symbols.378214526" superClass="sdcc.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="sdcc.c.compiler.option.preprocessor.def.symbols.378214526" name="Defined symbols (-D)" superClass="sdcc.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="__SDCC__"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.sdcc.c.compiler.input.1902871448" superClass="cdt.managedbuild.tool.sdcc.c.compiler.input"/>
@@ -43,6 +43,13 @@
 							<tool id="cdt.managedbuild.tool.sdcc.assembler.exe.release.1169861761" name="SDCC Assembler" superClass="cdt.managedbuild.tool.sdcc.assembler.exe.release">
 								<inputType id="cdt.managedbuild.tool.sdcc.assembler.input.97947313" superClass="cdt.managedbuild.tool.sdcc.assembler.input"/>
 							</tool>
+						</toolChain>
+					</folderInfo>
+					<folderInfo id="cdt.managedbuild.config.sdcc.exe.release.805237074.202831822" name="/" resourcePath="Library">
+						<toolChain id="cdt.managedbuild.toolchain.sdcc.exe.release.1135256653" name="SDCC Tool Chain" superClass="cdt.managedbuild.toolchain.sdcc.exe.release" unusedChildren="">
+							<tool id="cdt.managedbuild.tool.sdcc.c.compiler.exe.release.1231939743" name="SDCC Compiler" superClass="cdt.managedbuild.tool.sdcc.c.compiler.exe.release.75076745"/>
+							<tool id="cdt.managedbuild.tool.sdcc.c.linker.exe.release.1428598348" name="SDCC Linker" superClass="cdt.managedbuild.tool.sdcc.c.linker.exe.release.1315912485"/>
+							<tool id="cdt.managedbuild.tool.sdcc.assembler.exe.release.935151380" name="SDCC Assembler" superClass="cdt.managedbuild.tool.sdcc.assembler.exe.release.1169861761"/>
 						</toolChain>
 					</folderInfo>
 				</configuration>

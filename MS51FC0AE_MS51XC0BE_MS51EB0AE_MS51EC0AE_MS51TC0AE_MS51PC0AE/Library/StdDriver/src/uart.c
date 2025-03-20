@@ -133,24 +133,25 @@ uint8_t Receive_Data(uint8_t UARTPort)
 
 void UART_Send_Data(uint8_t UARTPort, uint8_t c)
 {
-    PUSH_SFRS;
-    SFRS = 0;
     switch (UARTPort)
     {
-        case UART0:
-          TI=0;
-          SBUF = c;
-          while(!TI);
-        break;
-        case UART1:
-          TI_1=0;
-          SBUF_1 = c;
-          while(!TI_1);
-        break;
+      case UART0:
+	    DISABLE_UART0_INTERRUPT;
+        SBUF = c;
+        while(!TI);
+        TI=0;
+		ENABLE_UART0_INTERRUPT;
+      break;
+      case UART1:
+	    DISABLE_UART1_INTERRUPT;
+        SBUF_1 = c;
+        while(!TI_1);
+        TI_1=0;
+		ENABLE_UART1_INTERRUPT;
+		ENABLE_GLOBAL_INTERRUPT;
+      break;
     }
-    POP_SFRS;
 }
-
 
 void Enable_UART0_VCOM_printf_24M_115200(void)
 {

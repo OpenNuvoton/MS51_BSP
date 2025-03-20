@@ -157,10 +157,26 @@ if(g_timer0Counter)
   }
 }
 
+void Timer1_Delay10ms(UINT32 u32CNT)
+{
+    clr_T1M;                                    //T1M=0, Timer1 Clock = Fsys/12
+    TMOD |= 0x10;                                //Timer1 is 16-bit mode
+    set_TR1;                                    //Start Timer1
+    while (u32CNT != 0)
+    {
+        TL1 = LOBYTE(65536UL-13334UL);    //Find  define in "Function_define.h" "TIMER VALUE"
+        TH1 = HIBYTE(65536UL-13334UL);
+        while (TF1 != 1);                        //Check Timer1 Time-Out Flag
+        clr_TF1;
+        u32CNT --;
+    }
+    clr_TR1;                                     //Stop Timer1
+}
+
 void Init_I2C(void)
 {
-    P03_OPENDRAIN_MODE;                         //set SCL (P13) is Opendrain mode
-    P04_OPENDRAIN_MODE;                         //set SDA (P14) is Opendrain mode
+    P13_OPENDRAIN_MODE;                         //set SCL (P13) is Opendrain mode
+    P14_OPENDRAIN_MODE;                         //set SDA (P14) is Opendrain mode
 
     SDA = 1;                                //set SDA and SCL pins high
     SCL = 1;

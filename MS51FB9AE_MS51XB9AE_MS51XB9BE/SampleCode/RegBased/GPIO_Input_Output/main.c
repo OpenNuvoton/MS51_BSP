@@ -29,14 +29,14 @@ void main (void)
       {
         CALL_NOP;
       }
-      Timer2_Delay(24000000,4,200,1000);
+      Timer0_Delay(24000000,200,1000);
 
       P1 &= CLR_BIT2;
       if (P1&SET_BIT3)
       {
         CALL_NOP;
       }
-      Timer2_Delay(24000000,4,200,1000);
+      Timer0_Delay(24000000,200,1000);
     }
 }
 

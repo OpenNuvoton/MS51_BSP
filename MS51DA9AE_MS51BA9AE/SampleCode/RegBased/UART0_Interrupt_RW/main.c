@@ -59,9 +59,11 @@ void Serial_ISR(void) __interrupt (4)
   {
     if (uart0_receive_flag)
     {
-      GPIO_LED ^= 1;
-      UART_Send_Data(UART0,uart0_receive_data);
       uart0_receive_flag = 0;
+      DISABLE_UART0_INTERRUPT;	  
+      UART_Send_Data(UART0,uart0_receive_data);
+	  ENABLE_UART0_INTERRUPT;
+      GPIO_LED ^= 1;
     }
   }
 }
