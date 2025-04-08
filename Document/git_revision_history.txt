@@ -60,3 +60,6 @@
 2025/03
 1. UART0/1                       Added disable UART RX interrupt when using checkflag TX to help UART TX behavior stable.
 2. ISP_I2C                       Added I2C1 ISP project. added I2C transfer time out after last package to help quick run in APROM.
+
+2025/04
+1. SDCC project                  Added the parameters to display the memory size post-build.
