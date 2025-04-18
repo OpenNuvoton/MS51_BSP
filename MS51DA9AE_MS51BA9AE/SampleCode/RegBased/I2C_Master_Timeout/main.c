@@ -81,7 +81,7 @@ void I2C_Write_Process(uint8_t u8DAT)
         i2cErrorFlag=1;
         goto I2CWRSTOP;
     }
-    Timer0_AutoReload_Interrupt_CounterClear();
+    Timer0_ReloadCounter();
 
     /* Write Step2 */
     clr_I2CON_STA;                              /*STA=0*/
@@ -93,7 +93,7 @@ void I2C_Write_Process(uint8_t u8DAT)
         i2cErrorFlag=1;
         goto I2CWRSTOP;
     }
-    Timer0_AutoReload_Interrupt_CounterClear();
+    Timer0_ReloadCounter();
 
     /* Write Step3 */
     for (u8Count = 0; u8Count < LOOP_SIZE; u8Count++)
@@ -108,7 +108,7 @@ void I2C_Write_Process(uint8_t u8DAT)
         }
         u8DAT = ~u8DAT;
     }
-    Timer0_AutoReload_Interrupt_CounterClear();
+    Timer0_ReloadCounter();
     /* Write Step4 */
     I2CWRSTOP:
     if  (i2cErrorFlag)
@@ -129,7 +129,7 @@ void I2C_Read_Process(uint8_t u8DAT)
 {
     uint8_t  u8Count;
 
-    Timer0_AutoReload_Interrupt_CounterClear();
+    Timer0_ReloadCounter();
     /* Read Step1 */
     set_I2CON_STA;
     clr_I2CON_SI;          
@@ -143,7 +143,7 @@ void I2C_Read_Process(uint8_t u8DAT)
         i2cErrorFlag=1;
         goto I2CRDSTOP;
     }
-    Timer0_AutoReload_Interrupt_CounterClear();
+    Timer0_ReloadCounter();
 
     /* Step13 */
     clr_I2CON_STA;                                    //STA needs to be cleared after START codition is generated
@@ -155,7 +155,7 @@ void I2C_Read_Process(uint8_t u8DAT)
         i2cErrorFlag=1;
         goto I2CRDSTOP;
     }
-    Timer0_AutoReload_Interrupt_CounterClear();
+    Timer0_ReloadCounter();
 
     /* Step14 */
     for (u8Count = 0; u8Count <LOOP_SIZE; u8Count++)
@@ -175,7 +175,7 @@ void I2C_Read_Process(uint8_t u8DAT)
         }
         u8DAT = ~u8DAT;
     } 
-    Timer0_AutoReload_Interrupt_CounterClear();
+    Timer0_ReloadCounter();
 
     /* Step15 */
     clr_I2CON_AA;
@@ -186,7 +186,7 @@ void I2C_Read_Process(uint8_t u8DAT)
         i2cErrorFlag=1;
         goto I2CRDSTOP;
     }
-    Timer0_AutoReload_Interrupt_CounterClear();
+    Timer0_ReloadCounter();
 
     /* Step16 */
     I2CRDSTOP:
@@ -208,7 +208,7 @@ void main(void)
     printf ("\n Test start ...");
 
     Init_I2C();                                 /* initial I2C circuit  */
-    Timer0_AutoReload_Interrupt_Initial(8,450); /* about 50ms time-out. Always clear counter in transmit */
+    Timer0_AutoReload_Interrupt_Initial(24,450); /* about 50ms time-out. Always clear counter in transmit */
     ENABLE_GLOBAL_INTERRUPT;
 
     I2C_Write_Process(0x55);                /* I2C Master will send 10 byte 0x55,0xAA,.... to slave */

@@ -62,7 +62,6 @@ __data uint8_t hircmap0,hircmap1;
 
 void MODIFY_HIRC_24(void)
 {
-
         IAPAL = 0x38;
         IAPAH = 0x00;
         IAPCN = READ_UID;
@@ -79,7 +78,6 @@ void MODIFY_HIRC_24(void)
         TA=0XAA;
         TA=0X55;
         RCTRIM1 = hircmap1;
-//        clr_CHPCON_IAPEN;
 }
 
 void MODIFY_HIRC_16(void)
@@ -135,7 +133,6 @@ void READ_CONFIG(void)
     IAPAL = 0x04;
     set_IAPTRG_IAPGO;
     CONF4 = IAPFD;
-//    clr_CHPCON_IAPEN;
 }
 
 void TM0_ini(void)
@@ -149,7 +146,7 @@ void TM0_ini(void)
 
 void UART1_ini_115200_24MHz(void)
 {
-    P16_QUASI_MODE;                                  
+    P16_QUASI_MODE;
     P02_INPUT_MODE;
   
     SCON_1 = 0x50;           /*UART1 Mode1,REN_1=1 */

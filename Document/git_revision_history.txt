@@ -63,3 +63,4 @@
 
 2025/04
 1. SDCC project                  Added the parameters to display the memory size post-build.
+2. I2C timeout 			    fix timer clear counter issue.
