@@ -49,6 +49,34 @@ void UART3_Open(uint32_t u32SysClock, uint32_t u32Baudrate)
     set_SC1CR0_NSB;      //stop bit = 1bit
   }
 
+	/**
+ * @brief       UART3 Parity Enable / Disable Setting 
+ * @param       Enable / Disable
+ * @return      none
+ * @details     none
+ * @example:    UART3_Parity(ENBALE,SCPODD)
+ */ 
+void UART3_Parity(uint8_t u8PStatus, uint8_t u8PEvenOdd)
+{
+    SFRS_TMP = SFRS;
+    if (u8PStatus==DISABLE)
+      {
+        set_SC1CR1_PBOFF;
+      }
+      else if (u8PStatus==ENABLE)
+      {
+        clr_SC1CR1_PBOFF;
+        if (u8PEvenOdd==SC1PEVEN)
+        {
+          clr_SC1CR1_OPE;
+        }
+        else if (u8PEvenOdd==SC1PODD)
+        {
+          set_SC1CR1_OPE;
+        }
+      }
+    SFRS = SFRS_TMP;
+}
 /**
  * @brief       UART3 receive data without interrupt 
  * @param       baudrate value
@@ -76,10 +104,9 @@ uint8_t UART3_Receive_Data(void)
  */ 
 void UART3_Send_Data(uint8_t c)
 {
-	clr_SC1CR0_TXOFF;
+    clr_SC1CR0_TXOFF;
     SC1DR = c;
     while(!(SC1TSR&SET_BIT3));
-    while(SC1TSR&SET_BIT7);
-    set_SC1CR0_TXOFF;
+    clr_SC1CR0_TXOFF;
 }
 

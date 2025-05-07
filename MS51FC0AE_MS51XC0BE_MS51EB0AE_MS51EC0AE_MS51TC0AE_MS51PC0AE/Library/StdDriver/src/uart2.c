@@ -37,6 +37,7 @@ void SC0_ISR(void) interrupt 21          // Vector @  0x9B
  */ 
 void UART2_Open(uint32_t u32SysClock, uint32_t u32Baudrate)
 {
+    SFRS_TMP = SFRS;
     set_SC0CR0_SCEN;         /* Enable SC module */
     set_SC0CR1_UARTEN;       /* set as UART mode */
     set_SC0CR1_CLKKEEP;      
@@ -49,6 +50,36 @@ void UART2_Open(uint32_t u32SysClock, uint32_t u32Baudrate)
     set_SC0CR1_PBOFF;     //parity bit disable
     SC0CR1&=0xCF;        //datalegth 8bit
     set_SC0CR0_NSB;      //stop bit = 1bit
+    SFRS = SFRS_TMP;
+}
+
+/**
+ * @brief       UART2 Parity Enable / Disable Setting 
+ * @param       Enable / Disable
+ * @return      none
+ * @details     none
+ * @example:    UART2_Parity(ENBALE,SCPODD)
+ */ 
+void UART2_Parity(uint8_t u8PStatus, uint8_t u8PEvenOdd)
+{
+    SFRS_TMP = SFRS;
+    if (u8PStatus==DISABLE)
+      {
+        set_SC0CR1_PBOFF;
+      }
+      else if (u8PStatus==ENABLE)
+      {
+        clr_SC0CR1_PBOFF;
+        if (u8PEvenOdd==SC0PEVEN)
+        {
+          clr_SC0CR1_OPE;
+        }
+        else if (u8PEvenOdd==SC0PODD)
+        {
+          set_SC0CR1_OPE;
+        }
+      }
+    SFRS = SFRS_TMP;
 }
 
 /**
@@ -79,8 +110,7 @@ void UART2_Send_Data(uint8_t c)
       clr_SC0CR0_TXOFF;
       SC0DR = c;
       while(!(SC0TSR&SET_BIT3));
-      while(SC0TSR&SET_BIT7);
-      set_SC0CR0_TXOFF;
+      clr_SC0CR0_TXOFF;
 }
 
 

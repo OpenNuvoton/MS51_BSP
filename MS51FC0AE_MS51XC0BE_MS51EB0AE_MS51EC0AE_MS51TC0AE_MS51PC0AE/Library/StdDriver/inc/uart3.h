@@ -8,6 +8,8 @@
 #define UART3_TXD   0
 #define UART3_RXD   1
 
+#define SC1PEVEN     0
+#define SC1PODD      1
 
 extern BIT uart3rvflag;
 extern uint8_t uart3rvbuffer;
@@ -17,3 +19,4 @@ void UART3_Receive_10byte(void);
 extern uint8_t UART3_Receive_Data(void);
 void UART3_Send_Data(uint8_t c);
 void UART3_Interrupt(uint8_t u8UART3INTSel,uint8_t u8UART3INTStatus);
+void UART3_Parity(uint8_t u8PStatus, uint8_t u8PEvenOdd);
