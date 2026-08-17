@@ -1,0 +1,231 @@
+{
+  "manifestFormat": "MCU-BSP-SBOM-Manifest",
+  "manifestVersion": "1.0",
+  "serialNumber": "urn:uuid:08e69128-7484-4898-a3bb-597a604c6b37",
+  "createdAt": "2026-08-17T09:16:48.098679Z",
+  "bsp": {
+    "name": "MS51_BSP",
+    "version": "df5eb82",
+    "releaseIdentifierSource": "SBOM file name",
+    "gitDescribe": "df5eb82"
+  },
+  "sbomPackage": {
+    "name": "MCU BSP SBOM Package",
+    "format": "CycloneDX",
+    "formatVersion": "1.6",
+    "contains": [
+      "Product SBOM",
+      "Test Sample SBOM"
+    ]
+  },
+  "sboms": [
+    {
+      "fileName": "MS51_BSP_Product_SBOM_df5eb82_cdx.json",
+      "sbomType": "Product SBOM",
+      "bomFormat": "CycloneDX",
+      "specVersion": "1.7",
+      "serialNumber": "urn:uuid:3d65d25e-2683-4ae3-8100-bad8cd21d34d",
+      "sbomVersion": 1,
+      "generatedTimestamp": "2026-08-17T17:16:44+08:00",
+      "metadataComponent": {
+        "bomRef": "4c942121aef13610",
+        "type": "library",
+        "name": "MCU Driver",
+        "version": "df5eb82",
+        "properties": [
+          {
+            "name": "bsp:sbom-category",
+            "value": "product"
+          },
+          {
+            "name": "bsp:scope",
+            "value": "Components included in, linked with, deployed to, or reasonably expected to be integrated into final product firmware/software."
+          },
+          {
+            "name": "bsp:scope-policy-file",
+            "value": "product-scope.yaml"
+          },
+          {
+            "name": "bsp:runtime-scope",
+            "value": "true"
+          },
+          {
+            "name": "bsp:included-in-product-firmware",
+            "value": "true"
+          },
+          {
+            "name": "bsp:third-party-components",
+            "value": "none identified in product scope based on the defined Product SBOM scope policy"
+          },
+          {
+            "name": "bsp:product-scope-include-path",
+            "value": "MS51DA9AE_MS51BA9AE/Library/Device"
+          },
+          {
+            "name": "bsp:product-scope-include-path",
+            "value": "MS51DA9AE_MS51BA9AE/Library/Startup"
+          },
+          {
+            "name": "bsp:product-scope-include-path",
+            "value": "MS51DA9AE_MS51BA9AE/Library/StdDriver"
+          },
+          {
+            "name": "bsp:product-scope-include-path",
+            "value": "MS51FB9AE_MS51XB9AE_MS51XB9BE/Library/Device"
+          },
+          {
+            "name": "bsp:product-scope-include-path",
+            "value": "MS51FB9AE_MS51XB9AE_MS51XB9BE/Library/Startup"
+          },
+          {
+            "name": "bsp:product-scope-include-path",
+            "value": "MS51FB9AE_MS51XB9AE_MS51XB9BE/Library/StdDriver"
+          },
+          {
+            "name": "bsp:product-scope-include-path",
+            "value": "MS51FC0AE_MS51XC0BE_MS51EB0AE_MS51EC0AE_MS51TC0AE_MS51PC0AE/Library/Device"
+          },
+          {
+            "name": "bsp:product-scope-include-path",
+            "value": "MS51FC0AE_MS51XC0BE_MS51EB0AE_MS51EC0AE_MS51TC0AE_MS51PC0AE/Library/Startup"
+          },
+          {
+            "name": "bsp:product-scope-include-path",
+            "value": "MS51FC0AE_MS51XC0BE_MS51EB0AE_MS51EC0AE_MS51TC0AE_MS51PC0AE/Library/StdDriver"
+          },
+          {
+            "name": "bsp:product-scope-exclude-path",
+            "value": "Document/"
+          },
+          {
+            "name": "bsp:product-scope-exclude-path",
+            "value": "MS51DA9AE_MS51BA9AE/SampleCode/"
+          },
+          {
+            "name": "bsp:product-scope-exclude-path",
+            "value": "MS51FB9AE_MS51XB9AE_MS51XB9BE/SampleCode/"
+          },
+          {
+            "name": "bsp:product-scope-exclude-path",
+            "value": "MS51FC0AE_MS51XC0BE_MS51EB0AE_MS51EC0AE_MS51TC0AE_MS51PC0AE/SampleCode/"
+          }
+        ]
+      },
+      "scope": "Components included in, linked with, deployed to, or reasonably expected to be integrated into final product firmware/software.",
+      "isProductRuntimeScope": true,
+      "componentSummary": {
+        "componentCount": 9,
+        "componentCountByType": {
+          "library": 9
+        },
+        "applicationNames": [],
+        "fileComponentCount": 0,
+        "fileComponentWithHashCount": 0
+      },
+      "hash": {
+        "algorithm": "SHA-256",
+        "value": "a9b5597b3aa94c78b368048d37cc65621be423da7d99e3b3330f7db2a52d9df7"
+      }
+    },
+    {
+      "fileName": "MS51_BSP_TestSample_SBOM_df5eb82_cdx.json",
+      "sbomType": "Test Sample SBOM",
+      "bomFormat": "CycloneDX",
+      "specVersion": "1.7",
+      "serialNumber": "urn:uuid:955e8cd7-6d29-49ae-8b42-2646deb96b9e",
+      "sbomVersion": 1,
+      "generatedTimestamp": "2026-08-17T17:16:47+08:00",
+      "metadataComponent": {
+        "bomRef": "d50f099ac0a9656f",
+        "type": "application",
+        "name": "MCU Test Sample",
+        "version": "df5eb82",
+        "properties": [
+          {
+            "name": "bsp:sbom-category",
+            "value": "test-sample"
+          },
+          {
+            "name": "bsp:scope",
+            "value": "Components used only for examples, demonstrations, validation, host-side utilities, or testing; not included in product runtime unless explicitly integrated by the user."
+          },
+          {
+            "name": "bsp:scope-policy-file",
+            "value": "test-sample-scope.yaml"
+          },
+          {
+            "name": "bsp:runtime-scope",
+            "value": "false"
+          },
+          {
+            "name": "bsp:included-in-product-firmware",
+            "value": "false"
+          },
+          {
+            "name": "bsp:test-sample-scope-include-path",
+            "value": "MS51DA9AE_MS51BA9AE/SampleCode"
+          },
+          {
+            "name": "bsp:test-sample-scope-include-path",
+            "value": "MS51FB9AE_MS51XB9AE_MS51XB9BE/SampleCode"
+          },
+          {
+            "name": "bsp:test-sample-scope-include-path",
+            "value": "MS51FC0AE_MS51XC0BE_MS51EB0AE_MS51EC0AE_MS51TC0AE_MS51PC0AE/SampleCode"
+          },
+          {
+            "name": "bsp:test-sample-scope-exclude-path",
+            "value": "Document/"
+          },
+          {
+            "name": "bsp:test-sample-scope-exclude-path",
+            "value": "MS51DA9AE_MS51BA9AE/Library/"
+          },
+          {
+            "name": "bsp:test-sample-scope-exclude-path",
+            "value": "MS51FB9AE_MS51XB9AE_MS51XB9BE/Library/"
+          },
+          {
+            "name": "bsp:test-sample-scope-exclude-path",
+            "value": "MS51FC0AE_MS51XC0BE_MS51EB0AE_MS51EC0AE_MS51TC0AE_MS51PC0AE/Library/"
+          }
+        ]
+      },
+      "scope": "Components used only for examples, demonstrations, validation, host-side utilities, or testing; not included in product runtime unless explicitly integrated by the user.",
+      "isProductRuntimeScope": false,
+      "componentSummary": {
+        "componentCount": 3,
+        "componentCountByType": {
+          "application": 3
+        },
+        "applicationNames": [
+          "MS51_ SampleCode"
+        ],
+        "fileComponentCount": 0,
+        "fileComponentWithHashCount": 0
+      },
+      "hash": {
+        "algorithm": "SHA-256",
+        "value": "aaa282f80c1dcd0883a0db1d9205d4348c9785fafdc0f600136f374c8b57fd4b"
+      },
+      "relationshipToProductSbom": {
+        "usesProductComponents": true,
+        "productSbomFile": "MS51_BSP_Product_SBOM_df5eb82_cdx.json",
+        "description": "Test sample firmware may be built using MCU Driver components described in the Product SBOM. These product components are not duplicated in the Test Sample SBOM."
+      }
+    }
+  ],
+  "scopeRule": {
+    "productSbom": "Use as the primary SBOM for product vulnerability assessment and CRA product component transparency.",
+    "testSampleSbom": "Use only when sample, demo, validation, or test-only components are reused, executed, distributed, or integrated by the customer.",
+    "separationRationale": "Product and Test Sample SBOMs are kept separate to avoid treating test/sample utilities as product runtime dependencies."
+  },
+  "customerGuidance": [
+    "Use the Product SBOM as the primary input for product vulnerability assessment.",
+    "Review the Test Sample SBOM only when the corresponding sample/demo/test components are used or redistributed.",
+    "Components in the Test Sample SBOM are not considered product firmware/runtime dependencies unless explicitly integrated by the user."
+  ],
+  "notes": [
+    "This manifest is an index for the SBOM package; it is not a merged CycloneDX BOM."
+  ]
+}
