@@ -1,0 +1,25 @@
+# MS51_BSP Product SBOM scope
+# Runtime / product-integrated first-party sources.
+# Paths are relative to the BSP root and follow the actual MS51_BSP layout
+# (an 8051 BSP split into three chip families, each with its own Library/).
+# Only include:, exclude: and their "- path:" entries are parsed by
+# tools/gen_bsp_sbom.py.
+sbomType: Product SBOM
+include:
+  # --- MS51DA9AE / MS51BA9AE family ---
+  - path: MS51DA9AE_MS51BA9AE/Library/Device
+  - path: MS51DA9AE_MS51BA9AE/Library/Startup
+  - path: MS51DA9AE_MS51BA9AE/Library/StdDriver
+  # --- MS51FB9AE / MS51XB9AE / MS51XB9BE family ---
+  - path: MS51FB9AE_MS51XB9AE_MS51XB9BE/Library/Device
+  - path: MS51FB9AE_MS51XB9AE_MS51XB9BE/Library/Startup
+  - path: MS51FB9AE_MS51XB9AE_MS51XB9BE/Library/StdDriver
+  # --- MS51FC0AE / MS51XC0BE / MS51EB0AE / MS51EC0AE / MS51TC0AE / MS51PC0AE family ---
+  - path: MS51FC0AE_MS51XC0BE_MS51EB0AE_MS51EC0AE_MS51TC0AE_MS51PC0AE/Library/Device
+  - path: MS51FC0AE_MS51XC0BE_MS51EB0AE_MS51EC0AE_MS51TC0AE_MS51PC0AE/Library/Startup
+  - path: MS51FC0AE_MS51XC0BE_MS51EB0AE_MS51EC0AE_MS51TC0AE_MS51PC0AE/Library/StdDriver
+exclude:
+  - path: Document/
+  - path: MS51DA9AE_MS51BA9AE/SampleCode/
+  - path: MS51FB9AE_MS51XB9AE_MS51XB9BE/SampleCode/
+  - path: MS51FC0AE_MS51XC0BE_MS51EB0AE_MS51EC0AE_MS51TC0AE_MS51PC0AE/SampleCode/

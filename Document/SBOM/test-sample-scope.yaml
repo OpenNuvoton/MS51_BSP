@@ -1,0 +1,14 @@
+# MS51_BSP Test Sample SBOM scope
+# Examples, demos, ISP utilities and build/IDE projects.
+# These are NOT product runtime dependencies unless the customer integrates
+# them. Paths are relative to the BSP root.
+sbomType: Test Sample SBOM
+include:
+  - path: MS51DA9AE_MS51BA9AE/SampleCode
+  - path: MS51FB9AE_MS51XB9AE_MS51XB9BE/SampleCode
+  - path: MS51FC0AE_MS51XC0BE_MS51EB0AE_MS51EC0AE_MS51TC0AE_MS51PC0AE/SampleCode
+exclude:
+  - path: Document/
+  - path: MS51DA9AE_MS51BA9AE/Library/
+  - path: MS51FB9AE_MS51XB9AE_MS51XB9BE/Library/
+  - path: MS51FC0AE_MS51XC0BE_MS51EB0AE_MS51EC0AE_MS51TC0AE_MS51PC0AE/Library/
