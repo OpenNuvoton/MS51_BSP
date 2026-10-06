@@ -1,13 +1,13 @@
 {
   "manifestFormat": "MCU-BSP-SBOM-Manifest",
   "manifestVersion": "1.0",
-  "serialNumber": "urn:uuid:08e69128-7484-4898-a3bb-597a604c6b37",
-  "createdAt": "2026-08-17T09:16:48.098679Z",
+  "serialNumber": "urn:uuid:67dfa5bc-70b8-4a46-b68c-1ccaaab2082c",
+  "createdAt": "2026-10-06T09:10:55.916849Z",
   "bsp": {
     "name": "MS51_BSP",
-    "version": "df5eb82",
+    "version": "6f7755d",
     "releaseIdentifierSource": "SBOM file name",
-    "gitDescribe": "df5eb82"
+    "gitDescribe": "6f7755d"
   },
   "sbomPackage": {
     "name": "MCU BSP SBOM Package",
@@ -20,18 +20,18 @@
   },
   "sboms": [
     {
-      "fileName": "MS51_BSP_Product_SBOM_df5eb82_cdx.json",
+      "fileName": "MS51_BSP_Product_SBOM_6f7755d_cdx.json",
       "sbomType": "Product SBOM",
       "bomFormat": "CycloneDX",
       "specVersion": "1.7",
-      "serialNumber": "urn:uuid:3d65d25e-2683-4ae3-8100-bad8cd21d34d",
+      "serialNumber": "urn:uuid:74414822-5968-4e87-affb-a227a3eaa58c",
       "sbomVersion": 1,
-      "generatedTimestamp": "2026-08-17T17:16:44+08:00",
+      "generatedTimestamp": "2026-10-06T17:10:51+08:00",
       "metadataComponent": {
-        "bomRef": "4c942121aef13610",
+        "bomRef": "2b5ec49c0461a363",
         "type": "library",
         "name": "MCU Driver",
-        "version": "df5eb82",
+        "version": "6f7755d",
         "properties": [
           {
             "name": "bsp:sbom-category",
@@ -124,22 +124,22 @@
       },
       "hash": {
         "algorithm": "SHA-256",
-        "value": "a9b5597b3aa94c78b368048d37cc65621be423da7d99e3b3330f7db2a52d9df7"
+        "value": "11ab78d74ecc29de4cf00196909e3fcfc4384518193daba9043a380d49d19b20"
       }
     },
     {
-      "fileName": "MS51_BSP_TestSample_SBOM_df5eb82_cdx.json",
+      "fileName": "MS51_BSP_TestSample_SBOM_6f7755d_cdx.json",
       "sbomType": "Test Sample SBOM",
       "bomFormat": "CycloneDX",
       "specVersion": "1.7",
-      "serialNumber": "urn:uuid:955e8cd7-6d29-49ae-8b42-2646deb96b9e",
+      "serialNumber": "urn:uuid:5757ec52-e50e-489b-814c-c09e7bd9393e",
       "sbomVersion": 1,
-      "generatedTimestamp": "2026-08-17T17:16:47+08:00",
+      "generatedTimestamp": "2026-10-06T17:10:54+08:00",
       "metadataComponent": {
-        "bomRef": "d50f099ac0a9656f",
+        "bomRef": "46e939923a38036a",
         "type": "application",
         "name": "MCU Test Sample",
-        "version": "df5eb82",
+        "version": "6f7755d",
         "properties": [
           {
             "name": "bsp:sbom-category",
@@ -206,11 +206,11 @@
       },
       "hash": {
         "algorithm": "SHA-256",
-        "value": "aaa282f80c1dcd0883a0db1d9205d4348c9785fafdc0f600136f374c8b57fd4b"
+        "value": "03a043eb4cd8326356e1b45b8e7e67a2fa07bc627b6ac9067746d96829096bd3"
       },
       "relationshipToProductSbom": {
         "usesProductComponents": true,
-        "productSbomFile": "MS51_BSP_Product_SBOM_df5eb82_cdx.json",
+        "productSbomFile": "MS51_BSP_Product_SBOM_6f7755d_cdx.json",
         "description": "Test sample firmware may be built using MCU Driver components described in the Product SBOM. These product components are not duplicated in the Test Sample SBOM."
       }
     }

@@ -2,10 +2,10 @@
   "$schema": "http://cyclonedx.org/schema/bom-1.7.schema.json",
   "bomFormat": "CycloneDX",
   "specVersion": "1.7",
-  "serialNumber": "urn:uuid:955e8cd7-6d29-49ae-8b42-2646deb96b9e",
+  "serialNumber": "urn:uuid:5757ec52-e50e-489b-814c-c09e7bd9393e",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-08-17T17:16:47+08:00",
+    "timestamp": "2026-10-06T17:10:54+08:00",
     "tools": {
       "components": [
         {
@@ -17,10 +17,17 @@
       ]
     },
     "component": {
-      "bom-ref": "d50f099ac0a9656f",
+      "bom-ref": "46e939923a38036a",
       "type": "application",
       "name": "MCU Test Sample",
-      "version": "df5eb82",
+      "version": "6f7755d",
+      "supplier": {
+        "name": "Nuvoton Technology Corporation",
+        "url": [
+          "https://www.nuvoton.com"
+        ]
+      },
+      "purl": "pkg:generic/nuvoton/ms51_bsp-testsample@6f7755d",
       "licenses": [
         {
           "license": {
@@ -78,6 +85,12 @@
           "value": "MS51FC0AE_MS51XC0BE_MS51EB0AE_MS51EC0AE_MS51TC0AE_MS51PC0AE/Library/"
         }
       ]
+    },
+    "manufacturer": {
+      "name": "Nuvoton Technology Corporation",
+      "url": [
+        "https://www.nuvoton.com"
+      ]
     }
   },
   "components": [
@@ -85,7 +98,14 @@
       "type": "application",
       "bom-ref": "ms51_bsp:test-sample-component:ms51da9ae_ms51ba9ae-samplecode",
       "name": "MS51_ SampleCode",
-      "version": "df5eb82",
+      "version": "6f7755d",
+      "supplier": {
+        "name": "Nuvoton Technology Corporation",
+        "url": [
+          "https://www.nuvoton.com"
+        ]
+      },
+      "purl": "pkg:generic/nuvoton/ms51_bsp-ms51da9ae_ms51ba9ae-samplecode@6f7755d",
       "licenses": [
         {
           "license": {
@@ -130,7 +150,14 @@
       "type": "application",
       "bom-ref": "ms51_bsp:test-sample-component:ms51fb9ae_ms51xb9ae_ms51xb9be-samplecode",
       "name": "MS51_ SampleCode",
-      "version": "df5eb82",
+      "version": "6f7755d",
+      "supplier": {
+        "name": "Nuvoton Technology Corporation",
+        "url": [
+          "https://www.nuvoton.com"
+        ]
+      },
+      "purl": "pkg:generic/nuvoton/ms51_bsp-ms51fb9ae_ms51xb9ae_ms51xb9be-samplecode@6f7755d",
       "licenses": [
         {
           "license": {
@@ -175,7 +202,14 @@
       "type": "application",
       "bom-ref": "ms51_bsp:test-sample-component:ms51fc0ae_ms51xc0be_ms51eb0ae_ms51ec0ae_ms51tc0ae_ms51pc0ae-samplecode",
       "name": "MS51_ SampleCode",
-      "version": "df5eb82",
+      "version": "6f7755d",
+      "supplier": {
+        "name": "Nuvoton Technology Corporation",
+        "url": [
+          "https://www.nuvoton.com"
+        ]
+      },
+      "purl": "pkg:generic/nuvoton/ms51_bsp-ms51fc0ae_ms51xc0be_ms51eb0ae_ms51ec0ae_ms51tc0ae_ms51pc0ae-samplecode@6f7755d",
       "licenses": [
         {
           "license": {
@@ -219,7 +253,7 @@
   ],
   "dependencies": [
     {
-      "ref": "d50f099ac0a9656f",
+      "ref": "46e939923a38036a",
       "dependsOn": [
         "ms51_bsp:test-sample-component:ms51da9ae_ms51ba9ae-samplecode",
         "ms51_bsp:test-sample-component:ms51fb9ae_ms51xb9ae_ms51xb9be-samplecode",
